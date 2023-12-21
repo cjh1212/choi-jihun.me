@@ -24,6 +24,8 @@ WORKDIR /usr/src/app
 #     npm ci --omit=dev
 COPY package.json package-lock.json ./
 
+RUN npm install
+
 # Run the application as a non-root user.
 USER node
 
