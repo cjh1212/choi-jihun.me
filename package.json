@@ -1,0 +1,14 @@
+{
+  "name": "choi-jihun",
+  "version": "1.0.0",
+  "description": "personal webpage",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jihun Choi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
