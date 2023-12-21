@@ -11,10 +11,10 @@ app.get('/', (req, res) => {
 
 app.get('/ctf', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/ctf.html'));
-})
+});
 
 app.get('/data', (req, res) => {
-    const directoryPath = path.join(__dirname, 'public/data');
+    const directoryPath = path.join(__dirname, 'public/data/sections');
     fs.readdir(directoryPath, (err, files) => {
         if (err) {
             return res.status(500).send(err);
@@ -31,6 +31,16 @@ app.get('/data', (req, res) => {
 
         res.json(fileContents)
     });
+});
+
+app.get('/desc', (req, res) => {
+    fs.readFile(path.join(__dirname, 'public/data/description/description'), 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        
+        res.json(data);
+    })
 });
 
 app.listen(80, () => {
