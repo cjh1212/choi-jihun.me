@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
+app.get('/ctf', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/ctf.html'));
+})
+
 app.get('/data', (req, res) => {
     const directoryPath = path.join(__dirname, 'public/data');
     fs.readdir(directoryPath, (err, files) => {
